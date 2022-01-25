@@ -1,0 +1,27 @@
+<div class="wrapper  d-flex justify-content-center">
+    <div class="card">
+      <form class="my-5 mx-auto p-4" style="border-radius: 12px;" (ngSubmit)="onLogin(login)"  #login = "ngForm">
+          <h4 class="d-flex justify-content-center pb-3">Sign In Your Account</h4>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" [ngModel] required>
+          </div>
+          <div class="form-group pb-3">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" name="password" [ngModel] required>
+          </div>
+          <div class="form-group form-check pl-4 ml-1">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          </div>
+          <div class="alert alert-danger" role = "alert" *ngIf="isFormValid">
+            Please fill all fields
+          </div>
+  
+          <div class="alert alert-danger" role = "alert" *ngIf="isValidCredential">
+            Invalid user of password
+          </div>
+          <button type="submit" class="btn">Submit</button>
+  
+      </form>
+    </div>
+  </div>
